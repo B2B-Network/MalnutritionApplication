@@ -78,9 +78,9 @@ def predict():
     prediction = model.predict(user_input_scaled)[0]
 
     if(prediction == 'MM'):
-        prediction = "Moderate Acute Malneutrition"
+        prediction = "Moderate Acute Malnutrition"
     if(prediction == 'SM'):
-        prediction = "Seviour Acute Malneutrition"
+        prediction = "Seviour Acute Malnutrition"
     if(prediction == 'N'):
         prediction = "Neutral"
     
