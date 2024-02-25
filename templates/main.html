@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hubballi&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Baloo Bhai' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
+    <style>
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background-image: url('https://tse4.mm.bing.net/th/id/OIP.yCwNdiMRMuuwmJOB7dS4xwHaKs?rs=1&pid=ImgDetMain');
+            color: #333;
+            line-height: 1.6;
+            background-repeat: no-repeat;  
+            background-size:100%;
+        }
+        .animated-button {
+  position: relative;
+  display: inline-block;
+  padding: 12px 24px;
+  margin: 10px 5rem;
+ 
+  font-size: 16px;
+  border-radius: 5px;
+  border: 2px solid lightblue;
+  background-color:beige;
+  border-radius: 100px;
+  font-weight: 600;
+  color: #000;
+  box-shadow: 0 0 0 2px beige;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+ 
+.animated-button span:last-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color:lightblue;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.320, 1);
+}
+ 
+.animated-button span:first-child {
+  position: relative;
+  z-index: 1;
+}
+ 
+.animated-button:hover {
+  box-shadow: 0 0 0 5px #2195f360;
+  color: #000000;
+}
+ 
+.animated-button:active {
+  scale: 0.95;
+}
+ 
+.animated-button:hover span:last-child {
+  width: 150px;
+  height: 150px;
+  opacity: 1;
+}
+ 
+ 
+ 
+        /* Contact Section */
+        #contact {
+           
+            padding: 50px 0;
+            text-align: center;
+        }
+ 
+ 
+        #contact-box {
+            width: 80%;
+            margin: 0 auto;
+            max-width: 600px;
+        }
+ 
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+ 
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+ 
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="number"],
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+ 
+        .form-group input[type="text"]:focus,
+        .form-group input[type="email"]:focus,
+        .form-group input[type="number"]:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #333;
+            outline: none;
+        }
+ 
+        .form-group textarea {
+            resize: vertical;
+        }
+    </style>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+ 
+<body>
+  <button style="margin-left:12rem;" class="animated-button">
+    <span><a href="home_page">Home</a></span>
+    <span></span>
+  </button>
+  <button class="animated-button">
+    <span><a href="about">About Us</a></span>
+    <span></span>
+  </button>
+  <button class="animated-button">
+    <span><a href="contact">Contact Us</a></span>
+    <span></span>
+  </button>
+ 
+   <form action="prediction" method="post">
+        <section id="contact">
+        <h1>We are bringing health and wellness home</h1>
+        <div id="contact-box">
+            <form id = "myForm">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone number:</label>
+                    <input type="text" name="phone" id="phone" placeholder="Enter your phone number">
+                </div>
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="number" name="age" id="age" placeholder="Enter your age">
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <select name="gender" id="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="height">Height (cm):</label>
+                    <input type="number" name="height" id="height" placeholder="Enter your height in centimeters">
+                </div>
+                <div class="form-group">
+                    <label for="weight">Weight (kg):</label>
+                    <input type="number" name="weight" id="weight" placeholder="Enter your weight in kilograms">
+                </div>
+                <div class="form-group">
+                    <label for="activity_level">Activity Level:</label>
+                    <select name="activity_level" id="activity_level">
+                        <option value="sedentary">Sedentary</option>
+                        <option value="lightly_active">Lightly Active</option>
+                        <option value="moderately_active">Moderately Active</option>
+                        <option value="very_active">Very Active</option>
+                        <option value="extra_active">Extra Active</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="bmi">BMI:</label>
+                    <input type="number" name="bmi" id="bmi" placeholder="Enter your BMI">
+                </div>
+                <div class="form-group">
+                    <label for="muac">Mid-Upper Arm Circumference (cm):</label>
+                    <input type="number" name="muac" id="muac"
+                        placeholder="Enter your Mid-Upper Arm Circumference in centimeters">
+                </div>
+                <div class="form-group">
+                    <label for="head_circumference">Head Circumference (cm):</label>
+                    <input type="number" name="hc" id="head_circumference"
+                        placeholder="Enter your head circumference in centimeters">
+                </div>
+                <div class="form-group">
+                    <label for="fingerprint_detected">Fingerprint Detected:</label>
+                    <input type="checkbox" name="fd" id="fingerprint_detected">
+                </div>
+                <div class="form-group">
+                    <label for="muscle_weight">Muscle Weight (kg):</label>
+                    <input type="number" name="mw" id="muscle_weight"
+                        placeholder="Enter your muscle weight in kilograms">
+                </div>
+                <div class="form-group">
+                    <label for="calories_per_gram">Calories per Gram:</label>
+                    <input type="number" name="cc" id="calories_per_gram"
+                        placeholder="Enter calories per gram">
+                </div>
+ 
+                <div class="login-with form" style="margin-bottom:3rem ;flex-direction: row; margin-top:3rem;margin-left: 6rem; width:20rem;">
+                 <form action="predict" method="post">
+                    <button class="button-confirm" style="width: 15rem;" type="submit">Submit</button>
+                </form>
+              </div>
+ 
+ 
+            </form>
+        </form>
+        </div>
+    </section>
+ 
+<!-- Code injected by live-server -->
+<script>
+
+    // <![CDATA[  <-- For SVG support
+    if ('WebSocket' in window) {
+        (function () {
+            function refreshCSS() {
+                var sheets = [].slice.call(document.getElementsByTagName("link"));
+                var head = document.getElementsByTagName("head")[0];
+                for (var i = 0; i < sheets.length; ++i) {
+                    var elem = sheets[i];
+                    var parent = elem.parentElement || head;
+                    parent.removeChild(elem);
+                    var rel = elem.rel;
+                    if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                        var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                        elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                    }
+                    parent.appendChild(elem);
+                }
+            }
+            var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+            var address = protocol + window.location.host + window.location.pathname + '/ws';
+            var socket = new WebSocket(address);
+            socket.onmessage = function (msg) {
+                if (msg.data == 'reload') window.location.reload();
+                else if (msg.data == 'refreshcss') refreshCSS();
+            };
+            if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                console.log('Live reload enabled.');
+                sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+            }
+        })();
+    }
+    else {
+        console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+    }
+    // ]]>
+</script>
+</body>
+ 
+</html>
