@@ -77,12 +77,20 @@ def predict():
     # Make a prediction using the model
     prediction = model.predict(user_input_scaled)[0]
 
+    if(prediction == 'MM'):
+        prediction = "Moderate Acute Malneutrition"
+    if(prediction == 'SM'):
+        prediction = "Seviour Acute Malneutrition"
+    if(prediction == 'N'):
+        prediction = "Neutral"
+    
     # Create a pie chart to visualize the prediction result
     # try:
     fig, ax = plt.subplots()
     
+    result = ['MAM','SAM','Neutral']
     data = model.predict_proba(user_input_scaled)[0]
-    labels = ['Class {}'.format(i) for i in range(len(data))]
+    labels = [f'{result[i]}' for i in range(len(data))]
     ax.pie(data, labels=labels, autopct='%1.1f%%', startangle=90)
 
     ax.set_title('Overall Prediction Result')
